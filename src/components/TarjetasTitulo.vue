@@ -1,6 +1,6 @@
 <template>
     <div class="tarjeta">
-        <img src="@/assets/Rick_and_Morty.jpg" :alt="Presentacion" class="tarjeta-imagen"/>
+        <img src="@/assets/Rick_and_Morty.jpg" :alt="titulo" class="tarjeta-imagen"/>
         <h2>{{ titulo }}</h2>
         <p>{{ descripcion }}</p>
     </div>

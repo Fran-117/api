@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 const personajes = 'https://rickandmortyapi.com/api/character'
