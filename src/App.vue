@@ -3,41 +3,38 @@
   <div class="contenedor">
     <EsteticaTarjetas
       Imagen="@/assets/Rick_and_Morty.jpg"
-      titulo=""
+      titulo="Exploremos la serie RICK AND MORTY"
       descripcion=""
     />
   </div>
-  <TituloPrincipal msg="Welcome to Your Vue.js App"/>
+
+    <div class="Contenido">
+        <h2>{{ nombre }}</h2>
+        <p>{{ descripcion }}</p>
+    </div>
 </template>
 
+
+
 <script>
-import TituloPrincipal from './components/TituloPrincipal.vue';
-import EsteticaTarjetas from './components/EsteticaTarjetas.vue';
+
+import EsteticaTarjetas from './components/TarjetasTitulo.vue';
 
 export default {
   name: 'App',
   components: {
-    TituloPrincipal,
     EsteticaTarjetas
   }
 }
 
-
 </script>
 
 <style>
-#app {
-  font-family: 'Times New Roman', Times, serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 40px;
 }
-img {
-  width: 200px;
-  height: auto;
-  margin-bottom: 10px;
-  border-radius: 10px;
-}
-
 </style>
