@@ -17,8 +17,18 @@
       :image="personaje.image"
     />
     </div>
-</template>
 
+    <div class="modal" v-on:click="AbrirModal()">
+      <ModalContenido
+        v-if="mostrarModal"
+        :named="personajeSeleccionado.name"
+        :description="personajeSeleccionado.status"
+        :image="personajeSeleccionado.image"
+        :especie="personajeSeleccionado.species"
+        :genero="personajeSeleccionado.gender"
+      />
+    </div>
+</template>
 
 
 <script>
@@ -26,12 +36,14 @@
 import { getPersonajes } from './Api';
 import TarjetasContenido from './components/TarjetasContenido.vue';
 import EsteticaTarjetas from './components/TarjetasTitulo.vue';
+import ModalContenido from './components/ModalContenido.vue';
 
 export default {
   name: 'App',
   components: {
     EsteticaTarjetas,
-    TarjetasContenido
+    TarjetasContenido,
+    ModalContenido
   },
     data() {
     return {
