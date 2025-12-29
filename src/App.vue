@@ -1,15 +1,15 @@
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img src="@/assets/Rick_and_Morty.jpg" alt="Rick and Morty" />
+  <TituloPrincipal msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TituloPrincipal from './components/TituloPrincipal.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TituloPrincipal
   }
 }
 </script>
@@ -20,7 +20,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 </style>
