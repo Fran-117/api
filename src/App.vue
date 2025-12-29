@@ -9,8 +9,13 @@
   </div>
 
     <div class="Contenido">
-        <h2>{{ nombre }}</h2>
-        <p>{{ descripcion }}</p>
+    <TarjetasContenido
+      v-for="personaje in personajes"
+      :key="personaje.id"
+      :nombre="personaje.name"
+      :descripcion="personaje.description"
+      :imagen="personaje.image"
+    />
     </div>
 </template>
 
@@ -18,12 +23,14 @@
 
 <script>
 
+import TarjetasContenido from './components/TarjetasContenido.vue';
 import EsteticaTarjetas from './components/TarjetasTitulo.vue';
 
 export default {
   name: 'App',
   components: {
-    EsteticaTarjetas
+    EsteticaTarjetas,
+    TarjetasContenido
   }
 }
 
