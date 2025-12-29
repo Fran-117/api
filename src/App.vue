@@ -15,19 +15,19 @@
       :named="personaje.name"
       :description="personaje.status"
       :image="personaje.image"
+      @click="abrirModal(personaje)"
     />
     </div>
 
-    <div class="modal" v-on:click="AbrirModal()">
-      <ModalContenido
-        v-if="mostrarModal"
-        :named="personajeSeleccionado.name"
-        :description="personajeSeleccionado.status"
-        :image="personajeSeleccionado.image"
-        :especie="personajeSeleccionado.species"
-        :genero="personajeSeleccionado.gender"
+    <ModalContenido
+      v-if="mostrarModal"
+      :named="personajeSeleccionado.name"
+      :description="personajeSeleccionado.status"
+      :image="personajeSeleccionado.image"
+      :especie="personajeSeleccionado.species"
+      :genero="personajeSeleccionado.gender"
+      @cerrar="cerrarModal"
       />
-    </div>
 </template>
 
 
@@ -47,15 +47,27 @@ export default {
   },
     data() {
     return {
-        personajes: []
+        personajes: [],
+        mostrarModal: false,
+        personajeSeleccionado: null
     };
     },
     async mounted() {
         this.personajes = await getPersonajes();
         console.log('Personajes cargados:', this.personajes);
+},
+methods: {
+    abrirModal(personaje) {
+      this.personajeSeleccionado = personaje;
+      this.mostrarModal = true;
+    },
+    cerrarModal() {
+      this.mostrarModal = false;
+      this.personajeSeleccionado = null;
+}
+},
 }
 
-};
 </script>
 
 <style>
