@@ -1,17 +1,28 @@
 
 <template>
-  <img src="@/assets/Rick_and_Morty.jpg" alt="Rick and Morty" />
+  <div class="contenedor">
+    <EsteticaTarjetas
+      Imagen="@/assets/Rick_and_Morty.jpg"
+      titulo=""
+      descripcion=""
+    />
+  </div>
   <TituloPrincipal msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
 import TituloPrincipal from './components/TituloPrincipal.vue';
+import EsteticaTarjetas from './components/EsteticaTarjetas.vue';
+
 export default {
   name: 'App',
   components: {
-    TituloPrincipal
+    TituloPrincipal,
+    EsteticaTarjetas
   }
 }
+
+
 </script>
 
 <style>
@@ -22,4 +33,11 @@ export default {
   text-align: center;
   margin-top: 60px;
 }
+img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
 </style>
